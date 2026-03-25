@@ -25,6 +25,7 @@ export function ProductListingPage({ products, loading, cartItems, onAddToCart }
     if (newQuery.trim()) params.q = newQuery.trim();
     const filterParams = filtersToParams(filters);
     setSearchParams({ ...params, ...filterParams });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleFilterChange = (newFilters: Filters) => {
@@ -32,6 +33,7 @@ export function ProductListingPage({ products, loading, cartItems, onAddToCart }
     if (query) params.q = query;
     const filterParams = filtersToParams(newFilters);
     setSearchParams({ ...params, ...filterParams });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const filteredProducts = useMemo(() => {
