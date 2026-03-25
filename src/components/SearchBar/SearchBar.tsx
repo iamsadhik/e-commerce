@@ -35,7 +35,7 @@ export function SearchBar({ initialQuery, onSearch }: SearchBarProps) {
       <input
         type="text"
         className={styles.searchInput}
-        placeholder="Search for t-shirts..."
+        placeholder="Search by name, color or type"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         onKeyDown={handleKeyDown}
