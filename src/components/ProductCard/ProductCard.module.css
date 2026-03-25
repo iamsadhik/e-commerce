@@ -1,0 +1,171 @@
+.card {
+  background: #161616;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  animation: cardAppear 0.4s ease both;
+  position: relative;
+}
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card:hover {
+  border-color: rgba(200, 169, 126, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.imageWrapper {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1;
+  background: #1a1a1a;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .image {
+  transform: scale(1.04);
+}
+
+.outOfStock {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b6560;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.typeBadge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(14, 14, 14, 0.8);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #c8a97e;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  backdrop-filter: blur(8px);
+}
+
+.info {
+  padding: 16px 18px;
+}
+
+.name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #e8e4de;
+  margin: 0 0 2px;
+}
+
+.meta {
+  font-size: 12px;
+  color: #6b6560;
+  margin-bottom: 14px;
+}
+
+.priceRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: 700;
+  color: #e8e4de;
+}
+
+.addButton {
+  padding: 8px 16px;
+  background: transparent;
+  color: #c8a97e;
+  border: 1px solid #c8a97e;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0px;
+}
+
+.addButton:hover {
+  background: #c8a97e;
+  color: #0e0e0e;
+}
+
+.addButton:active {
+  opacity: 0.8;
+}
+
+.addButton:disabled {
+  border-color: #2a2a2a;
+  color: #3a3a3a;
+  cursor: not-allowed;
+  background: transparent;
+}
+
+.successFeedback {
+  background: #2d5a3d !important;
+  border-color: #4ade80 !important;
+  color: #4ade80 !important;
+}
+
+.errorMessage {
+  margin-top: 8px;
+  padding: 6px 10px;
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 6px;
+  color: #f87171;
+  font-size: 12px;
+  font-weight: 500;
+  animation: shake 0.4s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-3px); }
+  40% { transform: translateX(3px); }
+  60% { transform: translateX(-3px); }
+  80% { transform: translateX(3px); }
+}
+
+.quantityInfo {
+  font-size: 12px;
+  color: #6b6560;
+  margin-top: 4px;
+  text-align: right;
+}
+
+.lowStock {
+  color: #c8a97e;
+  font-weight: 600;
+}

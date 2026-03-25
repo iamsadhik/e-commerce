@@ -1,0 +1,210 @@
+.wrapper {
+  min-height: 100vh;
+  background: #0e0e0e;
+}
+
+.content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px 32px;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 32px;
+}
+
+.mainArea {
+  min-width: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.shimmerCard {
+  background: #161616;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.shimmerImage {
+  aspect-ratio: 1;
+  background: #1a1a1a;
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmerImage::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.03) 50%, transparent 100%);
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.shimmerBody {
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.shimmerLine {
+  height: 14px;
+  border-radius: 4px;
+  background: #1e1e1e;
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmerLine::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.04) 50%, transparent 100%);
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.shimmerLineXs {
+  width: 40%;
+  height: 12px;
+}
+
+.shimmerPriceRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.shimmerPrice {
+  width: 60px;
+  height: 20px;
+  border-radius: 4px;
+  background: #1e1e1e;
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmerPrice::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.04) 50%, transparent 100%);
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.shimmerButton {
+  width: 90px;
+  height: 34px;
+  border-radius: 6px;
+  background: #1e1e1e;
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmerButton::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.04) 50%, transparent 100%);
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.shimmerSidebar {
+  background: #161616;
+  border-radius: 12px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.shimmerSidebarLine {
+  height: 14px;
+  border-radius: 4px;
+  background: #1e1e1e;
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmerSidebarLine::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.04) 50%, transparent 100%);
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.shimmerSearch {
+  height: 46px;
+  border-radius: 8px;
+  background: #161616;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmerSearch::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.03) 50%, transparent 100%);
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.shimmerResultsInfo {
+  height: 14px;
+  width: 180px;
+  border-radius: 4px;
+  background: #1e1e1e;
+  margin-bottom: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmerResultsInfo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.04) 50%, transparent 100%);
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@media (max-width: 850px) {
+  .content {
+    grid-template-columns: 1fr;
+    padding: 16px;
+    gap: 16px;
+  }
+  .shimmerSidebar {
+    display: none;
+  }
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+}
+
+@media (max-width: 660px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
+
+@media (max-width: 459px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
